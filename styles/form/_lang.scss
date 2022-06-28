@@ -1,0 +1,95 @@
+.lang {
+	&__title {
+		@extend %title;
+		&::before {
+			@include title-num("2");
+		}
+	}
+
+	& > *:not(:first-child) {
+		margin-top: 2em;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+		& > *:not(:first-child) {
+			margin-left: 2em;
+		}
+	}
+
+	&__info-text {
+		font-weight: bold;
+		width: 3.17em;
+		text-transform: uppercase;
+		text-align: right;
+	}
+
+	&__select-container {
+		position: relative;
+
+		&:nth-of-type(1) ~ & {
+			margin-right: 3em;
+		}
+
+		&:nth-of-type(1) ~ &::before {
+			content: "";
+			position: absolute;
+			background: url("../icons/trash-can.svg") center / 75% no-repeat;
+			top: 0;
+			right: -1em;
+			transform: translateX(100%);
+			height: 3.17em;
+			width: 2em;
+			cursor: pointer;
+		}
+	}
+
+	&__select {
+		outline: none;
+		color: inherit;
+		appearance: none;
+		text-align-last: center;
+		padding-right: 5.17em;
+		cursor: pointer;
+		@extend %btn;
+		&:focus,
+		&:hover {
+			outline: none;
+			border: 0.1em solid $color-b;
+		}
+	}
+
+	&__select:focus + &__arrow,
+	&__select:hover + &__arrow {
+		border-color: $color-b;
+	}
+
+	&__option {
+		background-color: $bg-btn;
+	}
+
+	&__arrow {
+		width: 3.17em;
+		height: 3.17em;
+		position: absolute;
+		background: url("../icons/down-arrow.svg") center / 20% no-repeat;
+		right: 0;
+		border-left: 0.1em solid $border-l;
+		pointer-events: none;
+	}
+
+	&__add {
+		@extend %btn;
+
+		&:focus,
+		&:hover {
+			outline: none;
+			border: 0.1em solid $color-b;
+		}
+
+		&:before {
+			@include before-icon("../icons/add.svg");
+		}
+	}
+}

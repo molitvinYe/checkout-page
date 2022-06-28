@@ -1,0 +1,91 @@
+.upload {
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		@extend %title;
+		&::before {
+			@include title-num("1");
+		}
+
+		&::after {
+			content: "(Doc, Docs, Text, PDF, Markdown)";
+			padding-left: 1em;
+			font-weight: normal;
+			font-size: 0.6em;
+		}
+	}
+
+	&__file {
+		@extend %hidden;
+	}
+
+	&__file:focus + &__btn {
+		border-color: $color-b;
+	}
+
+	&__btn {
+		display: flex;
+		margin: 0 auto 3em 0;
+		cursor: pointer;
+		@extend %btn;
+
+		&::before {
+			@include before-icon("../icons/upload.svg");
+		}
+
+		&:hover {
+			border-color: $color-b;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		padding: 2em 3em;
+		border: 0.1em solid $border-l;
+	}
+
+	&__file-info {
+		display: flex;
+		font-weight: bold;
+		color: $color-l;
+		& + & {
+			margin-top: 2em;
+		}
+	}
+
+	&__file-name {
+		flex: 1 1 35%;
+	}
+	&__file-size,
+	&__file-words {
+		flex: 1 1 25%;
+	}
+
+	&__file-remove {
+		flex: 1 1 15%;
+		text-align: center;
+		height: 1em;
+		width: 1em;
+		cursor: pointer;
+	}
+
+	&__file-title {
+		text-transform: uppercase;
+
+		&:nth-of-type(1) {
+			flex: 1 1 35%;
+		}
+		&:nth-of-type(2) {
+			flex: 1 1 25%;
+		}
+		&:nth-of-type(3) {
+			flex: 1 1 25%;
+		}
+		&:nth-of-type(4) {
+			text-align: center;
+			flex: 1 1 15%;
+		}
+	}
+}

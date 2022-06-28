@@ -1,0 +1,25 @@
+@mixin before-icon($icon) {
+	content: "";
+	display: block;
+	background: url($icon) 0 0/ 100% no-repeat;
+	width: 1em;
+	height: 1em;
+	float: left;
+	margin-right: 1em;
+}
+
+@mixin title-num($num) {
+	content: $num;
+	border: 0.1em solid $color-b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: 2.5em;
+	width: 2.5em;
+	left: -3.5em;
+	top: 50%;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	font-size: 0.8em;
+}

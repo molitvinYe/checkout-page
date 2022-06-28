@@ -1,0 +1,104 @@
+@import "form/form";
+
+.main {
+	margin-bottom: 8em;
+
+	&__body {
+		background-color: white;
+		border: 0.1em solid $border-l;
+		border-radius: 0.2em;
+	}
+	&__top {
+		display: flex;
+		border-bottom: 0.1em solid $border-l;
+		& section:first-child {
+			border-right: 0.1em solid $border-l;
+		}
+	}
+}
+
+.order {
+	display: flex;
+	flex: 1 1 67%;
+	padding: 1.5em 2em;
+
+	&__info {
+		flex: 1 1 auto;
+	}
+
+	&__title {
+		display: block;
+		color: $color-b;
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+
+	&__title::before {
+		@include before-icon("../icons/list.svg");
+	}
+
+	&__features {
+		display: flex;
+		height: 100%;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 4em 0 2em;
+		clear: left;
+	}
+
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+.order-feature {
+	&__title {
+		color: $color-b;
+		text-transform: uppercase;
+		margin-bottom: 0.8em;
+	}
+
+	&__description {
+		color: $color-l;
+	}
+}
+
+.help {
+	display: flex;
+	flex: 0 0 33%;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1.5em 2em;
+
+	&__title {
+		color: $color-b;
+		font-size: 1em;
+		line-height: 1em;
+		text-transform: uppercase;
+		margin-bottom: 0.8em;
+	}
+
+	&__title::before {
+		@include before-icon("../icons/help.svg");
+	}
+
+	&__content {
+		margin-left: 2em;
+	}
+
+	&__info {
+		line-height: 1.5em;
+		margin-bottom: 0.8em;
+		color: $color-l;
+	}
+
+	&__contact {
+		color: $color-b;
+		font-weight: bold;
+		&:first-child {
+			margin-right: 1em;
+		}
+	}
+}

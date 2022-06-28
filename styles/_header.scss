@@ -1,0 +1,42 @@
+.header {
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 5em 0;
+	}
+
+	&__sign,
+	&__back {
+		@extend %btn;
+		background-color: $bg-l;
+		&:hover {
+			color: $color-b;
+			border-color: $color-b;
+		}
+	}
+
+	&__back {
+		&::before {
+			@include before-icon("../icons/back-arrow.svg");
+		}
+
+		&:hover::before {
+			background: url("../icons/back-arrow-dark.svg") 0 0 / 100% no-repeat;
+		}
+	}
+	&__sign {
+		&::before {
+			@include before-icon("../icons/user.svg");
+		}
+
+		&:hover::before {
+			background: url("../icons/user-dark.svg") 0 0 / 100% no-repeat;
+		}
+	}
+
+	&__logo {
+		height: 6em;
+		opacity: 0.5;
+	}
+}

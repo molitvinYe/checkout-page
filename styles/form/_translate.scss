@@ -1,0 +1,65 @@
+.translate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__title {
+		text-transform: uppercase;
+		color: $color-b;
+		font-weight: 500;
+		font-size: 1.4em;
+		line-height: 1em;
+		letter-spacing: 0.1em;
+		padding: 0 0.1em 0.3em;
+		border-bottom: 0.1em solid $color-l;
+		margin-bottom: 3em;
+	}
+
+	&__choices {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__choice-container {
+		flex: 0 0 30%;
+	}
+
+	&__radio {
+		@extend %hidden;
+	}
+
+	&__choice {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		cursor: pointer;
+		@extend %btn;
+		padding: 0;
+		height: 15em;
+	}
+
+	&__radio:hover + &__choice,
+	&__radio:focus + &__choice {
+		border: 0.1em solid $color-b;
+	}
+
+	&__radio:checked + &__choice {
+		position: relative;
+		border: 0.5em solid $border-ch;
+	}
+
+	&__radio:checked + &__choice::before {
+		@extend %cheked-border;
+	}
+
+	&__choice-icon {
+		height: 7em;
+		margin-bottom: 1em;
+	}
+
+	&__choice-text {
+		color: $color-b;
+	}
+}

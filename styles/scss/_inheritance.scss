@@ -1,0 +1,39 @@
+%btn {
+	padding: 1em 2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 1em;
+	border: 0.1em solid $border-l;
+	border-radius: 0.2em;
+	background-color: $bg-btn;
+}
+
+%hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+%title {
+	position: relative;
+	font-size: 1.6em;
+	color: $color-b;
+	margin-bottom: 3em;
+}
+
+%cheked-border {
+	content: "";
+	background: url("../icons/check.svg") center / 100% no-repeat;
+	height: 2.3em;
+	width: 2.3em;
+	position: absolute;
+	top: -0.25em;
+	right: -0.25em;
+	transform: translate(50%, -50%);
+	border-radius: 50%;
+	border: 0.5em solid $border-ch;
+	background-color: $border-ch;
+}

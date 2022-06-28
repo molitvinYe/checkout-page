@@ -1,0 +1,187 @@
+.sign-up {
+	margin: 0 !important;
+	&__title {
+		@extend %title;
+		&::before {
+			@include title-num("5");
+		}
+	}
+
+	&__body {
+		& > * {
+			margin-top: 2em;
+		}
+		margin-bottom: 8em;
+	}
+
+	&__have-account {
+		color: $color-l;
+		font-weight: bold;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	&__person-info {
+		display: block;
+		padding: 1em 3.5em 1em 2em;
+		outline: none;
+		border: 0.1em solid $border-l;
+		color: inherit;
+		font-weight: bold;
+		border-radius: 0.3em;
+		position: relative;
+
+		&:focus {
+			border-color: $color-b;
+		}
+
+		&::placeholder {
+			color: $color-l;
+		}
+	}
+
+	&__input-container {
+		display: flex;
+		flex-direction: column;
+		div {
+			display: flex;
+		}
+	}
+
+	&__input-title {
+		font-size: 0.8em;
+		text-transform: uppercase;
+		color: $color-m;
+		margin: 0 0 0.5em 1em;
+	}
+
+	&__info-label {
+		margin: 0 !important;
+		position: relative;
+	}
+
+	&__person-info:not(:placeholder-shown):valid + &__info-label::before,
+	&__person-info:not(:placeholder-shown):invalid + &__info-label::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: -1em;
+		transform: translate(-100%, -50%);
+		height: 2em;
+		width: 2em;
+	}
+
+	&__person-info:not(:placeholder-shown):valid + &__info-label::before {
+		background: url("../icons/check.svg") center / 70% no-repeat;
+		background-color: $mark-c;
+		border-radius: 50%;
+	}
+
+	&__person-info:not(:placeholder-shown):invalid + &__info-label::before {
+		background: url("../icons/cancel.svg") center / 100% no-repeat;
+	}
+
+	&__row {
+		display: flex;
+
+		& > *:not(:first-child) {
+			margin-left: 2em;
+		}
+	}
+
+	&__card-info {
+		display: block;
+		padding: 1em 2em 1em 2em;
+		outline: none;
+		color: $color-l;
+		border: 0.1em solid $border-l;
+		font-weight: bold;
+		border-radius: 0.3em;
+
+		&::placeholder {
+			color: inherit;
+			text-align: center;
+		}
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		&#card-number {
+			width: 30em;
+			padding: 1em 6em 1em 2em;
+			position: relative;
+		}
+
+		&#expiry-date {
+			width: 15em;
+		}
+
+		&#code {
+			width: 7.5em;
+		}
+	}
+
+	&__card-info#card-number + &__info-label::after {
+		content: "visa";
+		position: absolute;
+		top: 50%;
+		right: 1em;
+		padding: 0.5em;
+		background-color: $color-l;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: white;
+		border-radius: 0.3em;
+		transform: translateY(-50%);
+	}
+}
+
+.payment {
+	display: flex;
+	width: 100%;
+	margin: 2em 0;
+	&__choice-container {
+		flex: 0 0 25%;
+		margin-right: 2em;
+	}
+
+	&__radio {
+		@extend %hidden;
+	}
+
+	&__choice {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		cursor: pointer;
+		@extend %btn;
+		padding: 0;
+		height: 8em;
+	}
+
+	&__radio:hover + &__choice,
+	&__radio:focus + &__choice {
+		border: 0.1em solid $color-b;
+	}
+
+	&__radio:checked + &__choice {
+		position: relative;
+		border: 0.5em solid $border-ch;
+	}
+
+	&__radio:checked + &__choice::before {
+		@extend %cheked-border;
+	}
+
+	&__choice-icon {
+		height: 6em;
+	}
+}

@@ -1,0 +1,66 @@
+.tone {
+	margin-right: 10em;
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 30%;
+	&__title {
+		@extend %title;
+		&::before {
+			@include title-num("3");
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1 1 auto;
+	}
+
+	&__choice-container {
+		& + & {
+			margin-top: 1.5em;
+		}
+	}
+
+	&__choice-container:nth-of-type(1) &__choice &__choice-text::before {
+		@include before-icon("../icons/chat.svg");
+	}
+
+	&__choice-container:nth-of-type(2) &__choice-text::before {
+		@include before-icon("../icons/case.svg");
+	}
+
+	&__choice-container:nth-of-type(3) &__choice-text::before {
+		@include before-icon("../icons/megaphone.svg");
+	}
+
+	&__choice {
+		width: 16em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@extend %btn;
+		height: 5em;
+		text-transform: none;
+		padding: 0;
+	}
+
+	&__checkbox:checked + &__choice::before {
+		@extend %cheked-border;
+	}
+
+	&__checkbox {
+		@extend %hidden;
+	}
+
+	&__checkbox:hover + &__choice,
+	&__checkbox:focus + &__choice {
+		border: 0.1em solid $color-b;
+	}
+
+	&__checkbox:checked + &__choice {
+		position: relative;
+		border: 0.5em solid $border-ch;
+	}
+}

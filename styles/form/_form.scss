@@ -1,0 +1,52 @@
+@import "translate";
+
+@import "upload";
+
+@import "lang";
+
+@import "tone";
+
+@import "urgent";
+
+@import "sign-up";
+
+.form {
+	padding: 6em 5em 6em 7em;
+	& > *:not(:last-child) {
+		margin-bottom: 8em;
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__agree {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		& > *:not(:last-child) {
+			margin-right: 3em;
+		}
+	}
+
+	&__agree-btn {
+		display: block;
+		margin: 0;
+		margin-right: 1em !important;
+	}
+}
+
+.form-btn {
+	@extend %btn;
+	transition: all 0.2s ease;
+	color: inherit;
+
+	&:first-child {
+		margin-bottom: 0.8em;
+	}
+
+	&:hover {
+		color: white;
+		background-color: $mark-c;
+	}
+}
