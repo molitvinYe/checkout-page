@@ -1,4 +1,4 @@
--semantic HTML
--BEM methodology
--SCSS predprocessor
--no javascript code
+#-semantic HTML
+#-BEM methodology
+#-SCSS predprocessor
+#-no javascript code
